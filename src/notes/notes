@@ -1,0 +1,1 @@
+ printPgmString(PSTR("\r\nGrbl " GRBL_VERSION " ['$' for help]\r\n"));

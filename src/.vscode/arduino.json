@@ -1,0 +1,6 @@
+{
+    "port": "COM10",
+    "board": "arduino:avr:mega",
+    "configuration": "cpu=atmega2560",
+    "sketch": "grbl.ino"
+}

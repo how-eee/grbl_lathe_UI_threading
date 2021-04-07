@@ -373,7 +373,7 @@ void mc_reset()
     spindle_stop();
     coolant_stop();
     #ifdef USE_SD_SUPPORT
-      SD_close();
+      SD_close();             //Close sd card if file was running
     #endif
 
     // Kill steppers only if in any motion state, i.e. cycle, actively holding, or homing.

@@ -165,7 +165,7 @@ void protocol_main_loop()
       if(UILineBufferState == UILineBufferState_ReadyForExecution)
       {
         UILineBufferState = UILineBufferState_Busy;
-        if(UILineBuffer[0] == '$')
+        if(UILineBuffer[0] == '$')   //added status report for system line executed
           report_status_message(system_execute_line(UILineBuffer));
         else
           gc_execute_line(UILineBuffer);
@@ -187,7 +187,7 @@ void protocol_main_loop()
         {
           if(result) 
           {
-            switch (SDLine[0]) 
+            switch (SDLine[0]) //SDLine now can perform system commands
               {
                 case '$':
                   if (system_execute_line(SDLine)) SDParseError();

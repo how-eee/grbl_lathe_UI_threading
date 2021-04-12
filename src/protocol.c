@@ -187,14 +187,14 @@ void protocol_main_loop()
         {
           if(result) 
           {
-            switch (SDLine[0]) //SDLine now can perform system commands
-              {
+            switch (SDLine[0])
+            {
                 case '$':
                   if (system_execute_line(SDLine)) SDParseError();
                   break;
                 default:
                   if (gc_execute_line(SDLine)) SDParseError();
-              }
+            }
           }     
         }
       }

@@ -172,13 +172,22 @@ UIMenu systemMenu[] =
       return;
     }
   
-    UILineBuffer[0] = '$';
-    UILineBuffer[1] = 'H';
-    UILineBuffer[2] = 0;
-    UILineBufferState = UILineBufferState_ReadyForExecution;
+    // UILineBuffer[0] = '$';
+    // UILineBuffer[1] = 'H';
+    // UILineBuffer[2] = 0;
+    // UILineBufferState = UILineBufferState_ReadyForExecution;
 
 
     goToUIPage(&statusUIPage);
+
+    sys.state = STATE_HOMING;
+    mc_homing_cycle(HOMING_CYCLE_ALL);
+     if (!sys.abort) 
+          {  // Execute startup scripts after successful homing.
+            sys.state = STATE_IDLE; // Set to IDLE when complete.
+            st_go_idle(); // Set steppers to the settings idle state before returning.
+            system_execute_startup(line);
+          }
   }
   
   #if(defined(SQUARE_CLONED_X_AXIS) || defined(SQUARE_CLONED_Y_AXIS))

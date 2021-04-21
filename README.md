@@ -16,3 +16,8 @@ Pressing PartZero button now zeroing axis in active coordinate system position, 
 
 Pressing shiftedPartZeroKey zeroing Machine position with tool offset.
 
+# Limit switches
+
+Use NC swithes with RC filter
+
+

@@ -11,3 +11,6 @@ Short test video https://youtu.be/dcXR74F-ByY
 I have changed many minor issues in bdurbrow, but I still have couple there not solved yet. Here is description and discussion https://github.com/MetalWorkerTools/grbl-L-Mega/issues/4
 
 
+Pressing PartZero button now zeroing axis in active coordinate system position, not machine position. tool_length_offset aplied if any. smartZeroDiameter applied, but I dont use it on lathe (its zero all the time) so didnot check it.
+shiftedPartZeroKey zeroing Machine position with tool offset.
+
